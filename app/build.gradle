@@ -15,8 +15,6 @@ buildscript {
 version "0.1"
 group "app"
 
-apply plugin:"eclipse"
-apply plugin:"idea"
 apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"com.energizedwork.webdriver-binaries"
@@ -30,6 +28,7 @@ repositories {
 }
 
 dependencies {
+    compile 'org.grails.plugins:spring-security-core:3.2.3'
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
@@ -52,6 +51,7 @@ dependencies {
     compile "org.grails.plugins:gsp"
     console "org.grails:grails-console"
     profile "org.grails.profiles:web"
+    runtime('mysql:mysql-connector-java')
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
     runtime "org.apache.tomcat:tomcat-jdbc"
